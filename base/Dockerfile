@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 
+# https://github.com/tensorflow/serving/blob/master/tensorflow_serving/tools/docker/Dockerfile.devel
 MAINTAINER Jeremiah Harmsen <jeremiah@google.com>
 
 RUN apt-get update && apt-get install -y \
