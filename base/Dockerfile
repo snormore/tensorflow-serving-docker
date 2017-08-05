@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+MAINTAINER Jeremiah Harmsen <jeremiah@google.com>
+
 RUN apt-get update && apt-get install -y \
         build-essential \
         curl \
