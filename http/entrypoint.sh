@@ -6,11 +6,7 @@ if [ -z $MODEL_URL ]; then
   exit 1
 fi
 
-if [ -z $MODEL_NAME ] || [ -z $MODEL_VERSION ]; then
-  echo 'MODEL_NAME or MODEL_VERSION is not set'
-  exit 1
-fi
-
+MODEL_NAME="${@:-model}"
 PORT="${@:-9000}"
 
 # Pull down the model from Google Storage
@@ -23,5 +19,5 @@ tar xvzf $(basename ${MODEL_URL}) -C /model/1
 set -x
 tensorflow_model_server \
   --port=${PORT} \
-  --model_name=${MODEL_NAME}-${MODEL_VERSION} \
+  --model_name=${MODEL_NAME} \
   --model_base_path=/model
