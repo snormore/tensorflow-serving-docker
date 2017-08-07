@@ -6,8 +6,8 @@ if [ -z $MODEL_URL ]; then
   exit 1
 fi
 
-MODEL_NAME="${@:-model}"
-PORT="${@:-9000}"
+: ${MODEL_NAME:=model}
+: ${PORT:=9000}
 
 # Pull down the model from Google Storage
 mkdir -p /model/1

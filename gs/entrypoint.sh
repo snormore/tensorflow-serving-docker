@@ -11,8 +11,8 @@ if [ -z $MODEL_URL ]; then
   exit 1
 fi
 
-MODEL_NAME="${@:-model}"
-PORT="${@:-9000}"
+: ${MODEL_NAME:=model}
+: ${PORT:=9000}
 
 # Auth with Google Cloud
 mkdir -p /opt/gcloud && \
