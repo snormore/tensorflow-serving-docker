@@ -59,5 +59,5 @@ RUN bazel build -c opt tensorflow_serving/... && \
     cp bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server /usr/local/bin/ && \
     bazel clean --expunge
 
-CMD ["/bin/bash"]
+CMD ["tensorflow_model_server --port=9000 --model_name=model --model_base_path=/model"]
 
